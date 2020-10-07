@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="c1" class="com.wipro.bean.Country">
+   		<property name="countryId" value="C001"></property>
+   		<property name="countryName" value="India"></property>
+   </bean>
+   <bean id="c2" class="com.wipro.bean.Country">
+   		<property name="countryId" value="T002"></property>
+   		<property name="countryName" value="Australia"></property>
+   </bean>
+   <bean id="player1" class="com.wipro.bean.Player">
+   		<property name="PlayerId" value="P001"></property>
+   		<property name="playerName" value="Sachin"></property>
+   		<property name="country" ref="c1"></property>
+   </bean>
+   <bean id="player2" class="com.wipro.bean.Player">
+   		<constructor-arg index="0" value="P002"></constructor-arg>
+   		<constructor-arg index="1" value="Dhoni"></constructor-arg>
+   		<constructor-arg index="2" ref="c1"></constructor-arg>
+   </bean>
+   <bean id="player3" class="com.wipro.bean.Player">
+   		<property name="PlayerId" value="P003"></property>
+   		<property name="playerName" value="Raina"></property>
+   		<property name="country" ref="c1"></property>
+   </bean>
+   <bean id="player4" class="com.wipro.bean.Player">
+   		<constructor-arg index="0" value="P004"></constructor-arg>
+   		<constructor-arg index="1" value="Warner"></constructor-arg>
+   		<constructor-arg index="2" ref="c2"></constructor-arg>
+   </bean>
+   <bean id="player5" class="com.wipro.bean.Player">
+   		<property name="PlayerId" value="P005"></property>
+   		<property name="playerName" value="Finch"></property>
+   		<property name="country" ref="c2"></property>
+   </bean>
+</beans>
